@@ -9,7 +9,7 @@
 .tetris {
   display: flex;
   align-items: flex-start;
-  padding: 30px;
+  padding: 15px;
   margin: 0 auto;
   max-width: 900px;
 }

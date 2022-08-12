@@ -4,7 +4,7 @@ import { useStage } from "../../hooks/useStage";
 import Stage from "./Stage";
 import Display from "./Display";
 import StartButton from "./StartButton";
-import { createStage } from "./gameHelpers";
+import { createStage, checkCollision } from "./gameHelpers";
 
 import styles from "./Tetris.module.css";
 
@@ -13,20 +13,32 @@ const Tetris = () => {
   const [gameOver, setGameOver] = useState(false);
 
   const [player, updatePlayerPos, resetPlayer] = usePlayer();
-  const [stage, setStage] = useStage(player);
+  const [stage, setStage] = useStage(player, resetPlayer);
 
   const movePlayer = (dir) => {
-    updatePlayerPos({ x: dir, y: 0 });
+    if (!checkCollision(player, stage, { x: dir, y: 0 })) {
+      updatePlayerPos({ x: dir, y: 0 });
+    }
   };
 
   const startGame = () => {
     // Reset
     setStage(createStage());
     resetPlayer();
+    setGameOver(false);
   };
 
   const drop = () => {
-    updatePlayerPos({ x: 0, y: 1, collided: false });
+    if (!checkCollision(player, stage, { x: 0, y: 1 })) {
+      updatePlayerPos({ x: 0, y: 1, collided: false });
+    } else {
+      if (player.pos.y < 1) {
+        console.log("Game Over!");
+        setGameOver(true);
+        setDropSpeed(null);
+      }
+      updatePlayerPos({ x: 0, y: 0, collided: true });
+    }
   };
 
   const dropPlayer = () => {
@@ -36,6 +48,7 @@ const Tetris = () => {
   const move = (keyCode) => {
     if (!gameOver) {
       if (keyCode === 37) {
+        console.log("Move Left");
         movePlayer(-1); // Move to the left
       } else if (keyCode === 39) {
         movePlayer(1); // Move to the right
