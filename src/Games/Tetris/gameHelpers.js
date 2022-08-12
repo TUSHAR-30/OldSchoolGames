@@ -1,5 +1,5 @@
 export const STAGE_WIDTH = 12;
-export const STAGE_HEIGHT = 20;
+export const STAGE_HEIGHT = 19;
 
 export const createStage = () => {
   // Create an array of length STAGE_WIDTH where each element is another array of length STAGE_WIDTH
@@ -7,7 +7,7 @@ export const createStage = () => {
   // 0 indicates that the current cell has no Tetromino, 1 indicates that the cell has a tetromino
   // "clear" indicates that the tetromino should be cleared from that specific cell on the next render
   // "merge" indicates that the tetromino should stay and be displayed on that cell on the next render
-  return Array.from(Array(STAGE_WIDTH), () =>
+  return Array.from(Array(STAGE_HEIGHT), () =>
     new Array(STAGE_WIDTH).fill([0, "clear"])
   );
 };

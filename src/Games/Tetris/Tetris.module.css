@@ -1,0 +1,22 @@
+.tetris-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background: url(../../img/tetrisBG.jpg) no-repeat center center fixed #000;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.tetris {
+  display: flex;
+  align-items: flex-start;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.aside-container {
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  padding: 0 20px;
+}

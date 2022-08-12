@@ -1,5 +1,16 @@
+import styles from "./Display.module.css";
+
 const Display = ({ gameOver, text }) => {
-  return <div>{text}</div>;
+  const displayFontColor = gameOver ? "red" : "#999";
+
+  return (
+    <div
+      className={styles["display-container"]}
+      style={{ color: displayFontColor }}
+    >
+      {text}
+    </div>
+  );
 };
 
 export default Display;
