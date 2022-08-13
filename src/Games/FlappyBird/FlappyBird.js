@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
 const BIRD_SIZE = 20;
-const GAME_WIDTH = 600;
+const GAME_WIDTH = 500;
 const GAME_HEIGHT = 500;
 const GRAVITY = 3;
 const JUMP_HEIGHT = 90;
 const OBSTACLE_WIDTH = 60;
-const OBSTACLE_GAP = 200;
+const OBSTACLE_GAP = 180;
 function FlappyBird() {
   const [birdPostion, setBirdPosition] = useState(250);
   const [gameHasStarted, setGameHasStarted] = useState(false);
@@ -24,6 +24,23 @@ function FlappyBird() {
       clearInterval(timeId);
     };
   }, [birdPostion, gameHasStarted]);
+
+  useEffect(() => {
+    let obstacleId;
+    if (gameHasStarted && obstacleLeft >= -OBSTACLE_WIDTH) {
+      obstacleId = setInterval(() => {
+        setObstacleLeft((obstacleLeft) => obstacleLeft - 5);
+      }, 24);
+      return () => {
+        clearInterval(obstacleId);
+      };
+    } else {
+      setObstacleLeft(GAME_WIDTH - OBSTACLE_WIDTH);
+      setObstacleHeight(
+        Math.floor(Math.random() * (GAME_HEIGHT - OBSTACLE_GAP))
+      );
+    }
+  });
   const handleClick = () => {
     let newBirdPosition = birdPostion - JUMP_HEIGHT;
     if (!gameHasStarted) {
@@ -75,7 +92,6 @@ const GameBox = styled.div`
   height: ${(props) => props.height}px;
   width: ${(props) => props.width}px;
   background-color: blue;
-  margin: 50px;
 `;
 const Obstacle = styled.div`
   position: relative;
