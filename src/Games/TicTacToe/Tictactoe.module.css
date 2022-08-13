@@ -1,0 +1,53 @@
+.tictactoe-header{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    background-color: #151e2f;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.heading-text{
+    color: white;
+    font-size: 42px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 20px;
+}
+.row{
+    display: flex;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.jc-center{
+    justify-content: center;
+}
+.square{
+    display: inline-block;
+    min-width: 70px;
+    min-height: 50px;
+    font-size: 44px;
+    text-align: center;
+    color: #1CDBF5;
+    font-weight: bolder;
+    padding: 30px;
+}
+.b-bottomRight{
+    border-right: 12px solid #1CDBF5;
+    border-bottom: 12px solid #1CDBF5;
+}
+.b-bottom{
+    border-bottom: 12px solid #1CDBF5;
+}
+.b-right{
+    border-right: 12px solid #1CDBF5;
+}
+.clear-button{
+    width: max-content;
+    padding: 8px;
+    font-size: medium;
+    margin: 40px auto 30px auto;
+}
