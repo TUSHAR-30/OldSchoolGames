@@ -1,18 +1,17 @@
-import Tetris from "./Games/Tetris/Tetris";
-import MemoryGame from "./Games/MemoryGame/MemoryGame";
-import Tictactoe from "./Games/TicTacToe/Tictactoe";
-import Snake from "./Games/Snake/Snake";
+import Homepage from "./components/Homepage";
+
+// Required for NextUI to work correctly
+import { NextUIProvider } from "@nextui-org/react";
 
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Tetris /> */}
-      {/* <Tictactoe /> */}
-      {/* <MemoryGame /> */}
-      <Snake />
-    </div>
+    <NextUIProvider>
+      <div className="App">
+        <Homepage />
+      </div>
+    </NextUIProvider>
   );
 }
 
