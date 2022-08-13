@@ -10,8 +10,10 @@ import Snake from "../Games/Snake/Snake";
 import FlappyBird from "../Games/FlappyBird/FlappyBird";
 
 import { games } from "../helpers/gamesData";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Container display="flex" alignItems="center" justify="center">
@@ -31,7 +33,7 @@ const Homepage = () => {
           color="success"
           size="xl"
           onClick={() => {
-            console.log("Music Button Clicked");
+            navigate("/music");
           }}
           css={{
             alignSelf: "center",
@@ -46,7 +48,9 @@ const Homepage = () => {
       <Grid.Container gap={3} justify="center">
         {games.map((gameObj) => (
           <Grid
-            onClick={() => console.log(gameObj.title)}
+            onClick={() => {
+              navigate(`/${gameObj.title}`);
+            }}
             key={gameObj.title}
             xs={12}
             sm={6}
