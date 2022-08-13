@@ -6,7 +6,11 @@ function SquareComponent(props) {
     ? `${props.className} ${styles.square}`
     : `${styles.square}`;
   return (
-    <span className={classes} onClick={props.onClick}>
+    <span
+      className={classes}
+      // style={{ border: "1px solid red", padding: "30px" }}
+      onClick={props.onClick}
+    >
       {props.state}
     </span>
   );
