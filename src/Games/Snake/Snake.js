@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useInterval } from "../../hooks/useInterval";
+
+import AsidePanel from "./AsidePanel";
+
 import {
   CANVAS_SIZE,
   SNAKE_START,
@@ -19,12 +22,14 @@ const Snake = () => {
   const [dir, setDir] = useState([0, -1]);
   const [speed, setSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState(0);
 
   const startGame = () => {
     setSnake(SNAKE_START);
     setApple(APPLE_START);
     setDir([0, -1]);
     setSpeed(SPEED);
+    setScore(0);
     setGameOver(false);
   };
 
@@ -91,6 +96,7 @@ const Snake = () => {
         }
         return prev;
       });
+      setScore((prevScore) => prevScore + 10);
       return true;
     }
     return false;
@@ -128,14 +134,15 @@ const Snake = () => {
       tabIndex="0"
       onKeyDown={(e) => moveSnake(e)}
     >
-      <canvas
-        style={{ border: "1px solid black" }}
-        ref={canvasRef}
-        width={`${CANVAS_SIZE[0]}px`}
-        height={`${CANVAS_SIZE[1]}px`}
-      />
-      {gameOver && <div>Game Over</div>}
-      <button onClick={startGame}>Start Game</button>
+      <div className={styles["snake-container"]}>
+        <canvas
+          style={{ border: "3px solid #999" }}
+          ref={canvasRef}
+          width={`${CANVAS_SIZE[0]}px`}
+          height={`${CANVAS_SIZE[1]}px`}
+        />
+        <AsidePanel gameOver={gameOver} score={score} startGame={startGame} />
+      </div>
     </div>
   );
 };

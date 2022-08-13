@@ -1,0 +1,38 @@
+.aside {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aside h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+.score {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.game-over {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: rgb(255, 0, 0);
+}
+
+.start-button {
+  box-sizing: border-box;
+  width: fit-content;
+  padding: 20px 50px;
+  min-height: 30px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background: #333;
+  font-size: 1rem;
+  outline: none;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
