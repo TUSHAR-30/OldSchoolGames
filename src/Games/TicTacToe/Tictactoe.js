@@ -1,24 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import SquareComponent from "./SquareComponent";
 import styles from "./Tictactoe.module.css";
 const initialState = ["", "", "", "", "", "", "", "", ""];
 function Tictactoe() {
+  const moves = useRef(0);
   const [gameState, updateGameState] = useState(initialState);
   const [isXChance, updateIsXChance] = useState(false);
+  const [winnerMsg, setWinnerMsg] = useState(null);
+
   const onSquareClicked = (index) => {
     let strings = Array.from(gameState);
-    strings[index] = isXChance ? "X" : "O";
-    updateGameState(strings);
-    updateIsXChance(!isXChance);
+    if (strings[index] === "" && !winnerMsg) {
+      strings[index] = isXChance ? "X" : "O";
+      updateGameState(strings);
+      updateIsXChance(!isXChance);
+      moves.current += 1;
+    }
   };
   useEffect(() => {
     const winner = checkWinner();
     if (winner) {
-      setTimeout(() => {
-        alert(`Ta da! ${winner} has won the game`);
-        updateGameState(initialState);
-      }, 100);
+      setWinnerMsg(winner);
+      moves.current = 0;
+    } else {
+      if (moves.current === 9 && winner === null) {
+        moves.current = 0;
+        setWinnerMsg("Tie");
+      }
     }
+    //eslint-disable-next-line
   }, [gameState]);
   const checkWinner = () => {
     const lines = [
@@ -46,6 +56,16 @@ function Tictactoe() {
   return (
     <div className={styles["tictactoe-header"]}>
       <p className={styles["heading-text"]}>Tic Tac Toe</p>
+      {!winnerMsg && (
+        <p className={styles["current-player-message"]}>
+          {isXChance ? `X's Turn To Play` : `O's Turn To Play`}
+        </p>
+      )}
+      {winnerMsg && (
+        <p className={styles["winner-message"]}>
+          {winnerMsg === "Tie" ? `Game Tied :S` : `${winnerMsg} Wins!`}
+        </p>
+      )}
       <div className={styles["row jc-center"]}>
         <SquareComponent
           className={styles["b-bottomRight"]}
@@ -98,7 +118,10 @@ function Tictactoe() {
       </div>
       <button
         className={styles["clear-button"]}
-        onClick={() => updateGameState(initialState)}
+        onClick={() => {
+          updateGameState(initialState);
+          setWinnerMsg(null);
+        }}
       >
         Clear Game
       </button>

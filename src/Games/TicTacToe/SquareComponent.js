@@ -8,10 +8,13 @@ function SquareComponent(props) {
   return (
     <span
       className={classes}
+      style={
+        props.state === "" ? { paddingLeft: "35px", paddingRight: "35px" } : {}
+      }
       // style={{ border: "1px solid red", padding: "30px" }}
       onClick={props.onClick}
     >
-      {props.state}
+      {props.state === "" ? `­­\u00ad` : props.state}
     </span>
   );
 }
