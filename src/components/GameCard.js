@@ -1,7 +1,11 @@
 import { Card, Col, Row, Text } from "@nextui-org/react";
 
 const GameCard = ({ cardImg, cardText }) => (
-  <Card css={{ w: "100%", h: "400px", maxW: "400px", cursor: "pointer" }}>
+  <Card
+    isHoverable={true}
+    isPressable={true}
+    css={{ w: "100%", h: "400px", maxW: "400px", cursor: "pointer" }}
+  >
     <Card.Body css={{ p: 0 }}>
       <Card.Image
         src={cardImg}

@@ -11,13 +11,20 @@ import { games } from "../helpers/gamesData";
 
 const Homepage = () => {
   return (
-    <Grid.Container gap={3} justify="center">
+    <Grid.Container
+      css={{
+        background: "linear-gradient(to right, #6A82FB, #FC5C7D)",
+      }}
+      gap={3}
+      justify="center"
+    >
       {games.map((gameObj) => (
         <Grid
           onClick={() => console.log(console.log(gameObj.title))}
           key={gameObj.title}
           xs={12}
           sm={4}
+          justify="center"
         >
           <GameCard cardImg={gameObj.image} cardText={gameObj.title} />
         </Grid>
