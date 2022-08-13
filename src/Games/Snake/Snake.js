@@ -39,11 +39,63 @@ const Snake = () => {
     }
   };
 
+  const createApple = () => {
+    return apple.map((_, i) =>
+      Math.floor((Math.random() * CANVAS_SIZE[i]) / SCALE)
+    );
+  };
+
+  const checkCollision = (piece, completeSnake = snake) => {
+    if (
+      piece[0] * SCALE >= CANVAS_SIZE[0] ||
+      piece[0] < 0 ||
+      piece[1] * SCALE >= CANVAS_SIZE[1] ||
+      piece[1] < 0
+    ) {
+      return true;
+    }
+
+    for (const part of completeSnake) {
+      if (piece[0] === part[0] && piece[1] === part[1]) {
+        return true;
+      }
+    }
+
+    return false;
+  };
+
+  const checkAppleCollision = (newSnake) => {
+    if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
+      let newApple = createApple();
+      while (checkCollision(newApple, newSnake)) {
+        newApple = createApple();
+      }
+      setApple(createApple);
+      setSpeed((prev) => {
+        if (prev > 100) {
+          return prev - 10;
+        } else if (prev > 50) {
+          return prev - 7;
+        } else if (prev > 5) {
+          return prev - 5;
+        }
+        return prev;
+      });
+      return true;
+    }
+    return false;
+  };
+
   const gameLoop = () => {
     const snakeCopy = JSON.parse(JSON.stringify(snake));
     const newSnakeHead = [snakeCopy[0][0] + dir[0], snakeCopy[0][1] + dir[1]];
     snakeCopy.unshift(newSnakeHead);
-    snakeCopy.pop();
+    if (checkCollision(newSnakeHead)) {
+      endGame();
+    }
+    if (!checkAppleCollision(snakeCopy)) {
+      snakeCopy.pop();
+    }
     setSnake(snakeCopy);
   };
 
