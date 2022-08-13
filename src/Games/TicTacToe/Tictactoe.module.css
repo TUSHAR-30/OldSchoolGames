@@ -1,54 +1,77 @@
-.tictactoe-header{
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    text-align: center;
-    background-color: #151e2f;
-    color: white;
-    justify-content: center;
-    align-items: center;
+.tictactoe-header {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  background-color: #151e2f;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
-.heading-text{
-    color: white;
-    font-size: 42px;
-    font-weight: bolder;
-    text-align: center;
-    margin: 20px;
+
+.heading-text,
+.winner-message,
+.current-player-message {
+  color: white;
+  font-size: 42px;
+  font-weight: bolder;
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 0px;
 }
-.row{
-    display: flex;
-    flex-direction: row;
+
+.winner-message,
+.current-player-message {
+  margin: 0;
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-size: 28px;
 }
-.column{
-    display: flex;
-    flex-direction: column;
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
-.jc-center{
-    justify-content: center;
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
-.square{
-    display: inline-block;
-    min-width: 70px;
-    min-height: 50px;
-    font-size: 44px;
-    text-align: center;
-    color: #1CDBF5;
-    font-weight: bolder;
-    padding: 30px;
+
+.jc-center {
+  justify-content: center;
 }
-.b-bottomRight{
-    border-right: 12px solid #1CDBF5;
-    border-bottom: 12px solid #1CDBF5;
+
+.square {
+  display: inline-block;
+  min-width: 70px;
+  min-height: 50px;
+  font-size: 44px;
+  text-align: center;
+  color: #1cdbf5;
+  font-weight: bolder;
+  padding: 10px 20px;
 }
-.b-bottom{
-    border-bottom: 12px solid #1CDBF5;
+
+.b-bottomRight {
+  border-right: 12px solid #1cdbf5;
+  border-bottom: 12px solid #1cdbf5;
 }
-.b-right{
-    border-right: 12px solid #1CDBF5;
+
+.b-bottom {
+  border-bottom: 12px solid #1cdbf5;
 }
-.clear-button{
-    width: max-content;
-    padding: 8px;
-    font-size: medium;
-    margin: 40px auto 30px auto;
+
+.b-right {
+  border-right: 12px solid #1cdbf5;
+}
+
+.clear-button {
+  color: black;
+  width: max-content;
+  padding: 8px;
+  font-size: medium;
+  border: none;
+  border-radius: 10px;
+  margin: 40px auto 30px auto;
 }
