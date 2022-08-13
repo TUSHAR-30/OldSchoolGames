@@ -9,6 +9,8 @@ import {
   DIRECTIONS,
 } from "./gameConstants";
 
+import styles from "./Snake.module.css";
+
 const Snake = () => {
   const canvasRef = useRef();
 
@@ -18,14 +20,31 @@ const Snake = () => {
   const [speed, setSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
-  const startGame = () => {};
+  const startGame = () => {
+    setSnake(SNAKE_START);
+    setApple(APPLE_START);
+    setDir([0, -1]);
+    setSpeed(SPEED);
+    setGameOver(false);
+  };
 
-  const endGame = () => {};
+  const endGame = () => {
+    setSpeed(null);
+    setGameOver(true);
+  };
 
   const moveSnake = ({ keyCode }) => {
     if (keyCode >= 37 && keyCode <= 40) {
       setDir(DIRECTIONS[keyCode]);
     }
+  };
+
+  const gameLoop = () => {
+    const snakeCopy = JSON.parse(JSON.stringify(snake));
+    const newSnakeHead = [snakeCopy[0][0] + dir[0], snakeCopy[0][1] + dir[1]];
+    snakeCopy.unshift(newSnakeHead);
+    snakeCopy.pop();
+    setSnake(snakeCopy);
   };
 
   useEffect(() => {
@@ -38,8 +57,15 @@ const Snake = () => {
     context.fillRect(apple[0], apple[1], 1, 1);
   }, [snake, apple, gameOver]);
 
+  useInterval(gameLoop, speed);
+
   return (
-    <div role="button" tabIndex="0" onKeyDown={(e) => moveSnake(e)}>
+    <div
+      className={styles["snake-wrapper"]}
+      role="button"
+      tabIndex="0"
+      onKeyDown={(e) => moveSnake(e)}
+    >
       <canvas
         style={{ border: "1px solid black" }}
         ref={canvasRef}
