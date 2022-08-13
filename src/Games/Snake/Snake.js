@@ -35,7 +35,17 @@ const Snake = () => {
 
   const moveSnake = ({ keyCode }) => {
     if (keyCode >= 37 && keyCode <= 40) {
-      setDir(DIRECTIONS[keyCode]);
+      setDir((prevDir) => {
+        const newDir = DIRECTIONS[keyCode];
+        // Dont allow 180 degree turns as it causes the snake to collide
+        if (
+          (prevDir[0] === newDir[0] && prevDir[1] === -newDir[1]) ||
+          (prevDir[0] === -newDir[0] && prevDir[1] === newDir[1])
+        ) {
+          return prevDir;
+        }
+        return newDir;
+      });
     }
   };
 
