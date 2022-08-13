@@ -1,14 +1,11 @@
-*{
-    /* margin: 0;
-    padding: 0; */
-    background: #f3d37c;
-    
-}
+
 .body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(45deg,rgba(64, 147, 5, 0.807),rgb(53, 242, 255)); ;
+    color: rgb(22, 2, 2);
 }
 .heading{
     text-align: center;
@@ -25,7 +22,7 @@
     gap:1em
 }
 .card{
-    background-color: white;
+    background-color: rgb(210, 255, 171);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,4 +54,23 @@
     100%{
         transform: scale(0);
     }
+}
+#active img{
+    transform: scale(1);
+}
+#wrong img{
+    /* background-color: red; */
+    transform: rotateY(0);
+}
+#wrong{
+    background-color: red;
+}
+#correct img{
+    transform: rotateY(0);
+}
+#correct{
+    background-color: green;
+}
+#active{
+    transform: rotateY(0);
 }
