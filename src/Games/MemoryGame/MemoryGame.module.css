@@ -1,0 +1,37 @@
+*{
+    /* margin: 0;
+    padding: 0; */
+    background: #f3d37c;
+    
+}
+.body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    text-align: center;
+    /* margin-bottom: 1em; */
+}
+.container{
+    /* display: flex; */
+    height: 700px;
+    width: 700px;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap:1em
+}
+.card{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.card img{
+    max-width: 80%;
+    max-height: 80%;
+}
