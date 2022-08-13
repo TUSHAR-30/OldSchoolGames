@@ -10,7 +10,7 @@ export const useStage = (player, resetPlayer) => {
 
     // Remove completed rows
     const sweepRows = (newStage) => {
-      newStage.reduce((acc, row) => {
+      return newStage.reduce((acc, row) => {
         if (row.findIndex((cell) => cell[0] === 0) === -1) {
           setRowsCleared((prevValue) => prevValue + 1);
           acc.unshift(new Array(newStage[0].length).fill([0, "clear"]));

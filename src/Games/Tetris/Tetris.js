@@ -80,7 +80,7 @@ const Tetris = () => {
       role="button"
       tabIndex="0"
       onKeyDown={(e) => move(e.keyCode)}
-      onKeyUp={keyUp}
+      onKeyUp={(e) => keyUp(e.keyCode)}
     >
       <div className={styles.tetris}>
         <Stage stage={stage} />
