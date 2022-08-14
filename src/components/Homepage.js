@@ -11,8 +11,14 @@ import FlappyBird from "../Games/FlappyBird/FlappyBird";
 
 import { games } from "../helpers/gamesData";
 import { useNavigate } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Homepage = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   const navigate = useNavigate();
   return (
     <>
@@ -25,6 +31,7 @@ const Homepage = () => {
             textGradient: "45deg, $purple800 -20%, $blue600 100%",
           }}
           size="6rem"
+          // data-aos="zoom-in"
         >
           Board No More
         </Text>
@@ -35,6 +42,7 @@ const Homepage = () => {
           onClick={() => {
             navigate("/music");
           }}
+          // data-aos="fade-up"
           css={{
             alignSelf: "center",
             justifySelf: "flex-end",
@@ -56,6 +64,8 @@ const Homepage = () => {
             sm={6}
             md={4}
             justify="center"
+            data-aos="fade-up"
+            data-aos-duration="1500"
           >
             <GameCard cardImg={gameObj.image} cardText={gameObj.title} />
           </Grid>
