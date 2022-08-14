@@ -1,20 +1,20 @@
 import { Button } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 
-const BackButton = () => {
+const BackButton = ({ alignBtn, topMargin }) => {
   const navigate = useNavigate();
   return (
     <Button
       shadow
       color="success"
-      size="xl"
+      size="lg"
       onClick={() => {
         navigate("/");
       }}
       css={{
-        alignSelf: "center",
-        marginTop: "2rem",
-        fontSize: "1.5rem",
+        alignSelf: `${alignBtn ? alignBtn : "center"}`,
+        marginTop: `${topMargin ? topMargin : "2rem"}`,
+        fontSize: "1.25rem",
       }}
       auto
     >

@@ -5,6 +5,7 @@ const Stage = ({ stage }) => {
   const stageHeight = stage.length;
   const stageStyles = {
     display: "grid",
+    marginTop: "1rem",
     gridTemplateRows: `repeat(
         ${stageHeight},
         calc(25vw / ${stageWidth})
