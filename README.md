@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Board No More
+Are you bored? Presenting a collection of your favourite games all in one place! Play Tetris, Snake, Memory Game, Tic Tac Toe or Flappy Bird. Sit back, relax and bring back all the nostalgia.
+Also features an embedded music player so that you can listen to tunes and vibe!
+Some games are not supported on mobile at the moment because they rely on Keyboard Key presses for movement/action.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PS: The Project name is a play on words. It was developed for the MLH Snakes and Hackers 2 Hackathon whose theme was to create Board Games.
 
-## Available Scripts
+![Board No More](https://user-images.githubusercontent.com/51107639/184531236-bf7adfa9-65d5-4d49-8721-cba0c13dc61f.png)
 
-In the project directory, you can run:
+# Web Application Screenshots
+Homepage
+![Board No More Homepage](https://user-images.githubusercontent.com/51107639/184531270-1d9a6c89-4eb1-4414-ad4b-aeb64e92c8a7.png)
 
-### `npm start`
+Tetris
+![Board No More Tetris](https://user-images.githubusercontent.com/51107639/184531275-c444c34c-cb05-4b10-a638-0ddab96aed39.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Snake
+![Board No More Snake](https://user-images.githubusercontent.com/51107639/184531281-90298f59-1580-47c8-b913-57a6cd284d86.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Memory Game
+![Board No More Memory Game](https://user-images.githubusercontent.com/51107639/184531285-9b1621e6-46d3-4ac1-9cba-a9cb48d1c5a2.png)
 
-### `npm test`
+Tic Tac Toe
+![Board No More Tic Tac Toe](https://user-images.githubusercontent.com/51107639/184531290-3379ca3e-b0c3-4901-bf55-bce6027b62bd.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Flappy Bird
+![Board No More Flappy Bird](https://user-images.githubusercontent.com/51107639/184531292-7f51ff98-e18f-42b2-b31f-eb497022d458.png)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Music Player
+![Board No More Music Player](https://user-images.githubusercontent.com/51107639/184531296-e204a894-aa01-43e3-8777-107f8dee7e52.png)
