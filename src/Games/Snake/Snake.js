@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useInterval } from "../../hooks/useInterval";
+import BackButton from "../../components/BackButton";
 
 import AsidePanel from "./AsidePanel";
 
@@ -134,6 +135,7 @@ const Snake = () => {
       tabIndex="0"
       onKeyDown={(e) => moveSnake(e)}
     >
+      <BackButton topMargin="1rem" topRight={true} />
       <div className={styles["snake-container"]}>
         <canvas
           style={{ border: "3px solid #999" }}
