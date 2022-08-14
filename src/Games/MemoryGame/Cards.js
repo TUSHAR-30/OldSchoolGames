@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "./Card";
 import { Container } from "@nextui-org/react/";
 import StartButton from "../../components/StartButton";
+import { Button } from "@nextui-org/react";
 
 import styles from "./MemoryGame.module.css";
 
@@ -82,6 +83,9 @@ function Cards() {
   ];
   const [items, setItems] = useState(data.sort(() => Math.random() - 0.5));
   const [prev, setPrev] = useState(-1);
+  const refreshPage = () => {
+    window.location.reload();
+  };
   function check(current) {
     if (items[current].id === items[prev].id) {
       items[current].stat = "correct";
@@ -121,7 +125,21 @@ function Cards() {
         justify="center"
         css={{ width: "100%", margin: "2rem 0" }}
       >
-        <StartButton callback={() => setItems(data)} buttonText="New Game" />
+        <Button
+          shadow
+          color="primary"
+          size="xl"
+          css={{
+            alignSelf: "center",
+            // marginTop: `${marginUp ? marginUp : ""}`,
+            fontSize: "1.5rem",
+          }}
+          auto
+          onClick={refreshPage}
+          // buttonText="New Game"
+        >
+          New Game
+        </Button>
       </Container>
     </>
   );
