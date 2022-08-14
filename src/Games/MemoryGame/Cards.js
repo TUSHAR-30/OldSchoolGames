@@ -7,73 +7,73 @@ function Cards() {
     [
       {
         id: 1,
-        img: "./memoryGameImg/dhoni.jpg",
+        img: "./memoryGameImg/chess.jpg",
 
         stat: "",
       },
       {
         id: 1,
-        img: "./memoryGameImg/dhoni.jpg",
+        img: "./memoryGameImg/chess.jpg",
 
         stat: "",
       },
       {
         id: 2,
-        img: "./memoryGameImg/jadeja.jpg",
+        img: "./memoryGameImg/flappy.png",
 
         stat: "",
       },
       {
         id: 2,
-        img: "./memoryGameImg/jadeja.jpg",
+        img: "./memoryGameImg/flappy.png",
 
         stat: "",
       },
       {
         id: 3,
-        img: "./memoryGameImg/kl.jpg",
+        img: "./memoryGameImg/memorygame.jpg",
 
         stat: "",
       },
       {
         id: 3,
-        img: "./memoryGameImg/kl.jpg",
+        img: "./memoryGameImg/memorygame.jpg",
 
         stat: "",
       },
       {
         id: 4,
-        img: "./memoryGameImg/Virat.jpg",
+        img: "./memoryGameImg/snake1.png",
 
         stat: "",
       },
       {
         id: 4,
-        img: "./memoryGameImg/Virat.jpg",
+        img: "./memoryGameImg/snake1.png",
 
         stat: "",
       },
       {
         id: 5,
-        img: "./memoryGameImg/Yuvraj.jpg",
+        img: "./memoryGameImg/tetris.jpg",
 
         stat: "",
       },
       {
         id: 5,
-        img: "./memoryGameImg/Yuvraj.jpg",
+        img: "./memoryGameImg/tetris.jpg",
 
         stat: "",
       },
       {
         id: 6,
-        img: "./memoryGameImg/duplesis.jpg",
+        img: "./memoryGameImg/tic-tac-toe.jpg",
 
         stat: "",
       },
       {
         id: 6,
-        img: "./memoryGameImg/duplesis.jpg",
+        img: "./memoryGameImg/tic-tac-toe.jpg",
 
         stat: "",
       },
