@@ -10,7 +10,7 @@ const BackButton = ({ alignBtn, topMargin, topRight }) => {
 
   const styles = {
     alignSelf: `${alignBtn ? alignBtn : "center"}`,
-    marginTop: `${topMargin ? topMargin : "2rem"}`,
+    marginTop: `${topMargin ? topMargin : "1rem"}`,
     fontSize: "1.25rem",
     ...topRightStyles,
   };
