@@ -9,6 +9,7 @@
     rgba(64, 147, 5, 0.807),
     rgb(53, 242, 255)
   );
+  min-height: 100vh;
   color: rgb(37, 2, 108);
 }
 .heading {
@@ -18,15 +19,15 @@
   font-weight: normal;
 }
 .container {
-  height: 700px;
+  height: 500px;
   width: 700px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 1em;
 }
 .card {
-  background-color: rgb(134, 141, 51);
+  background-color: rgb(19, 29, 116);
   border: 5px solid rgb(1, 103, 114);
   display: flex;
   justify-content: center;

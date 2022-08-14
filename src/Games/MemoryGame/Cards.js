@@ -77,28 +77,6 @@ function Cards() {
 
         stat: "",
       },
-      // {
-      //   id: 7,
-      //   img: "./memoryGameImg/abd.jpg",
-
-      //   stat: "",
-      // },
-      // {
-      //   id: 7,
-      //   img: "./memoryGameImg/abd.jpg",
-
-      //   stat: "",
-      // },
-      // {
-      //   id: 8,
-      //   img: "./memoryGameImg/Rohit.jpg",
-      //   stat: "",
-      // },
-      // {
-      //   id: 8,
-      //   img: "./memoryGameImg/Rohit.jpg",
-      //   stat: "",
-      // },
     ].sort(() => Math.random() - 0.5)
   );
   const [prev, setPrev] = useState(-1);
