@@ -1,6 +1,11 @@
+import BackButton from "./BackButton";
+
 const MusicComponent = () => {
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <div
+      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+    >
+      <BackButton />
       <iframe
         style={{ margin: "2rem", marginLeft: "10%", borderRadius: "20px" }}
         title="spotify embed"

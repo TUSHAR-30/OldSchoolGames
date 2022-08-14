@@ -9,14 +9,18 @@
 .tetris {
   display: flex;
   align-items: flex-start;
+  justify-content: space-evenly;
   padding: 15px;
   margin: 0 auto;
-  max-width: 900px;
 }
 
 .aside-container {
   width: 100%;
-  max-width: 200px;
-  display: block;
+  flex-grow: 1;
+  max-width: 500px;
+  margin-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 0 20px;
 }
