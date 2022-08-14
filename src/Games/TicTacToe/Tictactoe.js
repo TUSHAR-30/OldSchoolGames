@@ -20,11 +20,13 @@ function Tictactoe() {
   useEffect(() => {
     const winner = checkWinner();
     if (winner) {
+      // updateGameState(initialState);
       setWinnerMsg(winner);
       moves.current = 0;
     } else {
       if (moves.current === 9 && winner === null) {
         moves.current = 0;
+        // updateGameState(initialState);
         setWinnerMsg("Tie");
       }
     }
