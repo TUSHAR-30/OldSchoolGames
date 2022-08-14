@@ -4,9 +4,9 @@ const BIRD_SIZE = 20;
 const GAME_WIDTH = 500;
 const GAME_HEIGHT = 500;
 const GRAVITY = 3;
-const JUMP_HEIGHT = 90;
+const JUMP_HEIGHT = 70;
 const OBSTACLE_WIDTH = 60;
-const OBSTACLE_GAP = 180;
+const OBSTACLE_GAP = 170;
 function FlappyBird() {
   const [birdPostion, setBirdPosition] = useState(250);
   const [gameHasStarted, setGameHasStarted] = useState(false);
@@ -47,7 +47,7 @@ function FlappyBird() {
     const hasCollideWithTopObstacle =
       birdPostion >= 0 && birdPostion < obstacleHeight;
     const hasCollideWithBottomObstacle =
-      birdPostion <= 500 && birdPostion >= 500 - bottomObstacleHeight;
+      birdPostion <= 540 && birdPostion >= 540 - bottomObstacleHeight;
     if (
       obstacleLeft >= 0 &&
       obstacleLeft <= OBSTACLE_WIDTH &&
@@ -85,7 +85,9 @@ function FlappyBird() {
         />
         <Bird size={BIRD_SIZE} top={birdPostion} />
       </GameBox>
-      <span>{score}</span>
+      <span style={{ color: "#ffffff", fontWeight: "bold", fontSize: "35px" }}>
+        {score}
+      </span>
     </Div>
   );
 }
@@ -113,8 +115,9 @@ const Div = styled.div`
 const GameBox = styled.div`
   height: ${(props) => props.height}px;
   width: ${(props) => props.width}px;
-  background-color: blue;
+  background-color: #2956f5;
   overflow: hidden;
+  margin: 50px;
 `;
 const Obstacle = styled.div`
   position: relative;
