@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
+import BackButton from "../../components/BackButton";
 import bird from "./flappy.png";
+
 const BIRD_SIZE = 30;
 const GAME_WIDTH = 500;
 const GAME_HEIGHT = 500;
@@ -8,6 +10,7 @@ const GRAVITY = 3;
 const JUMP_HEIGHT = 70;
 const OBSTACLE_WIDTH = 60;
 const OBSTACLE_GAP = 170;
+
 function FlappyBird() {
   const [birdPostion, setBirdPosition] = useState(250);
   const [gameHasStarted, setGameHasStarted] = useState(false);
@@ -70,26 +73,31 @@ function FlappyBird() {
     }
   };
   return (
-    <Div onClick={handleClick}>
-      <GameBox height={GAME_HEIGHT} width={GAME_WIDTH}>
-        <Obstacle
-          top={0}
-          width={OBSTACLE_WIDTH}
-          height={obstacleHeight}
-          left={obstacleLeft}
-        />
-        <Obstacle
-          top={GAME_HEIGHT - (obstacleHeight + bottomObstacleHeight)}
-          width={OBSTACLE_WIDTH}
-          height={bottomObstacleHeight}
-          left={obstacleLeft}
-        />
-        <Bird size={BIRD_SIZE} top={birdPostion} src={bird} />
-      </GameBox>
-      <span style={{ color: "#ffffff", fontWeight: "bold", fontSize: "35px" }}>
-        {score}
-      </span>
-    </Div>
+    <>
+      <BackButton topRight={true} topMargin="0.75rem" />
+      <Div onClick={handleClick}>
+        <GameBox height={GAME_HEIGHT} width={GAME_WIDTH}>
+          <Obstacle
+            top={0}
+            width={OBSTACLE_WIDTH}
+            height={obstacleHeight}
+            left={obstacleLeft}
+          />
+          <Obstacle
+            top={GAME_HEIGHT - (obstacleHeight + bottomObstacleHeight)}
+            width={OBSTACLE_WIDTH}
+            height={bottomObstacleHeight}
+            left={obstacleLeft}
+          />
+          <Bird size={BIRD_SIZE} top={birdPostion} src={bird} />
+        </GameBox>
+        <span
+          style={{ color: "#ffffff", fontWeight: "bold", fontSize: "35px" }}
+        >
+          {score}
+        </span>
+      </Div>
+    </>
   );
 }
 
