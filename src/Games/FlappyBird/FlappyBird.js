@@ -2,11 +2,12 @@ import styled from "styled-components";
 import React, { useEffect, useState } from "react";
 import BackButton from "../../components/BackButton";
 import bird from "./flappy.png";
+import background from "./flappy-background.jpg";
 
 const BIRD_SIZE = 30;
 const GAME_WIDTH = 500;
 const GAME_HEIGHT = 500;
-const GRAVITY = 3;
+const GRAVITY = 4;
 const JUMP_HEIGHT = 70;
 const OBSTACLE_WIDTH = 60;
 const OBSTACLE_GAP = 170;
@@ -23,7 +24,7 @@ function FlappyBird() {
     if (gameHasStarted && birdPostion < GAME_HEIGHT - BIRD_SIZE) {
       timeId = setInterval(() => {
         setBirdPosition((birdPostion) => birdPostion + GRAVITY);
-      }, 24);
+      }, 15);
     }
     return () => {
       clearInterval(timeId);
@@ -35,7 +36,7 @@ function FlappyBird() {
     if (gameHasStarted && obstacleLeft >= -OBSTACLE_WIDTH) {
       obstacleId = setInterval(() => {
         setObstacleLeft((obstacleLeft) => obstacleLeft - 5);
-      }, 24);
+      }, 15);
       return () => {
         clearInterval(obstacleId);
       };
@@ -124,7 +125,8 @@ const Div = styled.div`
 const GameBox = styled.div`
   height: ${(props) => props.height}px;
   width: ${(props) => props.width}px;
-  background-color: #2956f5;
+
+  background-image: url(${background});
   overflow: hidden;
   margin: 50px;
 `;
