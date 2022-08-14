@@ -101,10 +101,10 @@ const Tetris = () => {
       onKeyDown={(e) => move(e.keyCode)}
       onKeyUp={(e) => keyUp(e.keyCode)}
     >
+      <BackButton topMargin={"1rem"} topRight={true} />
       <div className={styles.tetris}>
         <Stage stage={stage} />
         <aside className={styles["aside-container"]}>
-          <BackButton topMargin={"1rem"} />
           <Text
             css={{
               fontFamily: "GamePlayed",
