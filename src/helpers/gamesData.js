@@ -6,9 +6,9 @@ import ticTacToeCardImg from "../img/ticTacToeCard.png";
 import flappyBirdCardImg from "../img/flappyBirdCard.jpg";
 
 export const games = [
-  { image: tetrisCardImg, title: "tetris" },
-  { image: snakeCardImg, title: "snake" },
-  { image: memoryCardImg, title: "memorygame" },
-  { image: ticTacToeCardImg, title: "tictactoe" },
-  { image: flappyBirdCardImg, title: "flappybird" },
+  { image: tetrisCardImg, title: "Tetris", routeLink: "tetris" },
+  { image: snakeCardImg, title: "Snake", routeLink: "snake" },
+  { image: memoryCardImg, title: "Memory Game", routeLink: "memorygame" },
+  { image: ticTacToeCardImg, title: "Tic Tac Toe", routeLink: "tictactoe" },
+  { image: flappyBirdCardImg, title: "Flappy Bird", routeLink: "flappybird" },
 ];

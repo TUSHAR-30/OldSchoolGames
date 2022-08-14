@@ -1,13 +1,5 @@
 import { Grid, Text, Container, Button } from "@nextui-org/react";
 import GameCard from "./GameCard";
-import MusicComponent from "./MusicComponent";
-
-// Games
-import Tetris from "../Games/Tetris/Tetris";
-import MemoryGame from "../Games/MemoryGame/MemoryGame";
-import Tictactoe from "../Games/TicTacToe/Tictactoe";
-import Snake from "../Games/Snake/Snake";
-import FlappyBird from "../Games/FlappyBird/FlappyBird";
 
 import { games } from "../helpers/gamesData";
 import { useNavigate } from "react-router-dom";
@@ -49,7 +41,7 @@ const Homepage = () => {
         {games.map((gameObj) => (
           <Grid
             onClick={() => {
-              navigate(`/${gameObj.title}`);
+              navigate(`/${gameObj.routeLink}`);
             }}
             key={gameObj.title}
             xs={12}
