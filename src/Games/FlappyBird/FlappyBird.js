@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
-const BIRD_SIZE = 20;
+import bird from "./flappy.png";
+const BIRD_SIZE = 30;
 const GAME_WIDTH = 500;
 const GAME_HEIGHT = 500;
 const GRAVITY = 3;
@@ -83,7 +84,7 @@ function FlappyBird() {
           height={bottomObstacleHeight}
           left={obstacleLeft}
         />
-        <Bird size={BIRD_SIZE} top={birdPostion} />
+        <Bird size={BIRD_SIZE} top={birdPostion} src={bird} />
       </GameBox>
       <span style={{ color: "#ffffff", fontWeight: "bold", fontSize: "35px" }}>
         {score}
@@ -94,9 +95,8 @@ function FlappyBird() {
 
 export default FlappyBird;
 
-const Bird = styled.div`
+const Bird = styled.img`
   position: absolute;
-  background-color: red;
   height: ${(props) => props.size}px;
   width: ${(props) => props.size}px;
   top: ${(props) => props.top}px;
@@ -106,7 +106,8 @@ const Div = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  & span {
+  min-height=100vh;
+   & span {
     color: white;
     font-size: 24px;
     position: absolute;
