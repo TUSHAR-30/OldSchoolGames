@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 const Homepage = () => {
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 2000, offset: 20 });
   }, []);
   const navigate = useNavigate();
   return (
